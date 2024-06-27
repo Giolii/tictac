@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* Start  */
+html{
+  background-color: rgb(240 241 245);
+  background-image: linear-gradient(rgb(210 213 219) 1px, transparent 1px), linear-gradient(to right, rgb(210 213 219) 1px, rgb(240 241 245) 1px);
+  background-size: 20px 20px;
+}
+.page-title{
+  text-align: center;
+  font-family: "Playwrite PL";
+  color: white;
+  font-weight: 600;
+  color: #e8e8e8;
+  text-shadow: 0px 0px 5px #000000, 0px 0px 10px #000000, 0px 0px 10px #000000,
+    0px 0px 20px #020044;
+    grid-area: title;
+}
+body{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 100px 300px 100px;
+  gap: 20px;
+  grid-template-areas: 
+  '. title .'
+  'player1 field player2'
+  '. reset .';
+  place-items: center;
+}
+.field{
+  border: 5px solid #000;
+  height: 300px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+  grid-area: field;
+}
+.field div{
+  border: 1px solid #000;
+  background-color: rgb(55, 118, 174);
+}
+.field div:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+.reset{
+  width: 130px;
+  height: 50px;
+  font-size: 30px;
+}
+.square{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: white;
+  user-select: none;
+}
+.reset{
+  width: 6em;
+  height: 3em;
+  user-select: none;
+  cursor: pointer;
+  grid-area: reset;
+}
+.player1,.player2{
+  font-family: Montserrat, sans-serif;;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #009688;
+  padding: 40px;
+  box-shadow:
+	  inset #0032d6 0 0 0 5px, 
+    inset #0d1fc3 0 0 0 1px, 
+    inset #0c54ab 0 0 0 10px, 
+    inset #1f5ebd 0 0 0 11px, 
+    inset #8ca1ff 0 0 0 16px, 
+    inset #5d48e4 0 0 0 17px, 
+    inset #c2d6f4 0 0 0 21px, 
+    inset #8c9cf5 0 0 0 22px;
+  text-shadow: 3px 3px 1px #bfecf7;
+  text-align: center;
+}
+.player1{
+  grid-area: player1;
+}
+.player2{
+  grid-area: player2;
+}
+.p1score,.p2score{
+font-size: 30px!important;
+background-color: red!important;
+color: red!important;
+}
